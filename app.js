@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 var cors = require('cors')
 const userRouter = require('./Routers/userRouter');
 const itemRouter = require('./Routers/itemRouter');
+const csvRouter = require('./Routers/csvRouter');
  
 
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/user',userRouter);
 app.use('/user/item',itemRouter)
+app.use('/csv',csvRouter)
 
 
 const CONNECTION_URL = 'mongodb+srv://pneel2272:Hacker*1999@user.rabm24y.mongodb.net/test?retryWrites=true&w=majority'
