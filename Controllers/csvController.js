@@ -11,7 +11,6 @@ module.exports.downloadCSV = async (req, res) => {
         const csv = await converter
             .json2csvAsync(item)
             .then(csv => {
-            
                 fs.writeFile('item.csv', csv, (err) => {
                     if (err) {
                       console.error(err);
